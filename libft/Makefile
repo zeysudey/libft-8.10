@@ -2,7 +2,7 @@ NAME = libft.a
 
 CC = gcc
 
-SOURCE = ft_strlcpy.c ft_....
+SOURCE = ft_strlcpy.c ft_strlen.c
 
 OBJECTS = $(SOURCE:.c=.o)
 
@@ -18,9 +18,10 @@ $(OBJECTS): %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
+	rm -f $(OBJECTS)
 
 fclean:
+	rm -f $(NAME)
 
-re:
+re: fclean all
 
-PHONY: all clean fclean re
